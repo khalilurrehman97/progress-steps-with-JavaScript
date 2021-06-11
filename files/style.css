@@ -1,0 +1,91 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 100vh;
+overflow: hidden;
+margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+.progress-container{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 30px;
+    max-width: 100%;
+    width: 350px;
+}
+
+.progress-container::before {
+    background-color:peachpuff;
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    height: 4px;
+    width: 100%;
+    transform: translateY(-50%);
+    z-index: -1;
+}
+
+.progress {
+    background-color:dodgerblue;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    height: 4px;
+    width: 0%;
+    transform: translateY(-50%);
+    z-index: -1;
+    transition: 0.4s ease;
+}
+
+.circle {
+    background-color:whitesmoke;
+    color: peru;
+    display: flex;
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    justify-content: center;
+    align-content: center;
+    border:3px solid peachpuff;
+    transition: 0.4s ease;
+
+}
+
+.circle.active {
+    border-color: dodgerblue;
+}
+
+.btn {
+    background-color: dodgerblue;
+    border: 0;
+    color:whitesmoke;
+    padding: 10px 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    margin: 5px;
+    font-size: 16px;
+}
+
+.btn:active{
+    transform: scale(0.96);
+}
+.btn:focus{
+    outline: 0;
+}
+.btn:disabled{
+    background-color: peachpuff;
+    cursor:not-allowed;
+}
